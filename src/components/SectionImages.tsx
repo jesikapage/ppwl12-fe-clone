@@ -94,3 +94,5 @@ export function AirbnbImages() {
     </div>
   );
 }
+
+export default AirbnbImages;

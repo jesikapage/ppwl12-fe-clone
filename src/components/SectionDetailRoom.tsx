@@ -183,3 +183,5 @@ export function AirbnbRoomDetail() {
     </div>
   );
 }
+
+export default AirbnbRoomDetail;

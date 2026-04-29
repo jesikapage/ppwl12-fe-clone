@@ -1,20 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Page1 from "./pages/Page1";
-import Page2 from "./pages/Page2";
-import PageExample from "./pages/PageExample";
+import Page1 from "./pages/Page1"; // Halaman Main
+import Page2 from "./pages/Page2"; // Halaman Room
 import Navbar from "./components/Navbar";
 import FooterLinks from "./components/footer";
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Page1 />} />
-        <Route path="/page-2" element={<Page2 />} />
-        <Route path="/page-example" element={<PageExample />} />
-      </Routes>
-      <FooterLinks />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Page1 />} />
+            <Route path="/room" element={<Page2 />} />
+          </Routes>
+        </main>
+        {/* Footer utama biasanya muncul di semua halaman, 
+            tapi nanti di Page 2 kita tambah Footer khusus Room */}
+        <FooterLinks />
+      </div>
     </Router>
   );
 }
