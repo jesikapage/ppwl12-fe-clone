@@ -14,7 +14,6 @@ function App() {
           <Route path="/page-2" element={<Page2 />} />
           <Route path="/page-example" element={<PageExample />} />
         </Routes>
-        
       <FooterLinks />
     </Router>
     
