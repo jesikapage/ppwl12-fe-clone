@@ -1,27 +1,21 @@
-<<<<<<< HEAD
 import TelusuriLainnya from '../components/footerRooms';
-
-export default function Page2() {
-    return (
-        <div className="flex flex-col min-h-screen">
-            <div className="flex-grow flex justify-center items-center py-20">
-                <h1>Konten Utama Halaman Room (Page 2)</h1>
-            </div>
-
-            <TelusuriLainnya />
-        </div>
-    )
-}
-=======
 import LocationSection from "@/components/LocationSection";
 import RatingAndReviewSection from "@/components/RatingAndReviewSection";
 
 export default function Page2() {
   return (
-    <div className="min-h-screen flex flex-col justify-center bg-white items-center space-y-24">
+    <div className="min-h-screen flex flex-col bg-white items-center space-y-24 py-20">
+      {/* Konten Utama */}
+      <div className="flex flex-col items-center">
+        <h1>Konten Utama Halaman Room (Page 2)</h1>
+      </div>
+
+      {/* Fitur Baru */}
       <LocationSection />
       <RatingAndReviewSection />
+
+      {/* Footer Khusus Room */}
+      <TelusuriLainnya />
     </div>
   );
 }
->>>>>>> origin/rating-dan-review
