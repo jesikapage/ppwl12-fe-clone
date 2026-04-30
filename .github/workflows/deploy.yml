@@ -1,7 +1,7 @@
 name: Deploy to InfinityFree
 
 on:
-  push:
+  puh:
     branches:
       - main
 
@@ -20,10 +20,10 @@ jobs:
         run: bun install
 
       - name: Build project (Vite)
-        run: npx tsc --noEmit --skipLibCheck || true && npx vite build
+        run: bun run build 
       
-      - name: Check dist exists (ubuntu script)
-        run: test -d dist
+      - name: Check dist exists
+        run: ls -la dist/
 
       - name: Upload to InfinityFree via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -32,4 +32,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
-          server-dir: ${{ secrets.FTP_DIR }}
+          server-dir: htdocs/ 
+          port: 21
+          timeout: 60000
