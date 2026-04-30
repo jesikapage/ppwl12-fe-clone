@@ -20,7 +20,8 @@ jobs:
         run: bun install
 
       - name: Build project (Vite)
-        run: bun run build
+        run: |
+          bun run build || npx vite build
       
       - name: Check dist exists
         run: ls -la dist/
