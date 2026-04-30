@@ -1,7 +1,7 @@
 name: Deploy to InfinityFree
 
 on:
-  puh:
+  push:
     branches:
       - main
 
@@ -20,7 +20,7 @@ jobs:
         run: bun install
 
       - name: Build project (Vite)
-        run: bun run build 
+        run: bun run build
       
       - name: Check dist exists
         run: ls -la dist/
@@ -32,6 +32,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/
-          server-dir: htdocs/ 
+          server-dir: htdocs/
           port: 21
           timeout: 60000
