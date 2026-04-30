@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Heart, ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // TAMBAHKAN INI
 
 interface PropertyCardProps {
   images: string[];
