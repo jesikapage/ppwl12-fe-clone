@@ -35,4 +35,6 @@ jobs:
           local-dir: dist/
           server-dir: htdocs/
           port: 21
+          active: false
+          protocol: ftp
           timeout: 60000
