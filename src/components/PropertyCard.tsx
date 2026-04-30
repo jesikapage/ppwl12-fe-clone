@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Heart, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface PropertyCardProps {
   images: string[];
@@ -41,15 +42,14 @@ export default function PropertyCard({
   };
 
   return (
-    <a
-      href="#"
-      className="block group"
+    <Link
+      to="/room" 
+      className="block group cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container */}
       <div className="relative aspect-square rounded-xl overflow-hidden mb-3">
-        {/* Images */}
         <div
           className="flex transition-transform duration-300 ease-out h-full"
           style={{ transform: `translateX(-${currentImage * 100}%)` }}
@@ -64,7 +64,6 @@ export default function PropertyCard({
           ))}
         </div>
 
-        {/* Guest Favorite Badge */}
         {isGuestFavorite && (
           <div className="absolute top-3 left-3 bg-white px-2.5 py-1 rounded-full shadow-sm">
             <span className="text-xs font-semibold text-[#222222]">Pilihan tamu</span>
@@ -74,12 +73,12 @@ export default function PropertyCard({
         {/* Heart Button */}
         <button
           onClick={toggleLike}
-          className="absolute top-3 right-3 p-1.5 transition-transform hover:scale-110"
+          className="absolute top-3 right-3 p-1.5 transition-transform hover:scale-110 z-10"
         >
           <Heart
             className={`w-6 h-6 transition-colors ${
               isLiked
-                ? "fill-[#FF385C] text-[#FF385C] heart-pop"
+                ? "fill-[#FF385C] text-[#FF385C]"
                 : "fill-black/30 text-white stroke-[1.5]"
             }`}
           />
@@ -87,7 +86,7 @@ export default function PropertyCard({
 
         {/* Navigation Arrows */}
         {isHovered && images.length > 1 && (
-          <>
+          <div className="z-10">
             {currentImage > 0 && (
               <button
                 onClick={prevImage}
@@ -104,10 +103,9 @@ export default function PropertyCard({
                 <ChevronRight className="w-4 h-4 text-[#222222]" />
               </button>
             )}
-          </>
+          </div>
         )}
 
-        {/* Dots Indicator */}
         {images.length > 1 && (
           <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
             {images.map((_, idx) => (
@@ -133,6 +131,6 @@ export default function PropertyCard({
         </div>
         <p className="text-sm text-[#717171] mt-0.5">{price}</p>
       </div>
-    </a>
+    </Link>
   );
 }
