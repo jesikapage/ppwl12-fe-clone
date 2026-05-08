@@ -24,7 +24,10 @@ const FooterLinks = () => {
             <ul className="space-y-3">
               {col.links.map((link) => (
                 <li key={link}>
-                  <a href="#" className="text-[14px] text-[#222222] hover:underline decoration-[#222222]">
+                  <a
+                    href="#"
+                    className="text-[14px] text-[#222222] hover:underline decoration-[#222222]"
+                  >
                     {link}
                   </a>
                 </li>
@@ -33,29 +36,71 @@ const FooterLinks = () => {
           </div>
         ))}
       </div>
-
+ 
       {/* Bottom bar */}
       <div className="border-t border-[#DDDDDD]">
-        <div className="max-w-[1280px] mx-auto px-10 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-[#222222]">
-          <div className="flex items-center gap-2 flex-wrap justify-center md:justify-start">
+        <div className="max-w-[1280px] mx-auto px-10 py-5 flex flex-col md:flex-row justify-between items-center gap-4 text-[14px] text-[#222222]">
+          
+          {/* Kiri: copyright & links */}
+          <div className="flex items-center gap-1 flex-wrap justify-center md:justify-start">
             <span>© 2026 Airbnb, Inc.</span>
-            <span className="px-1">·</span>
+            <span className="mx-1">·</span>
             <a href="#" className="hover:underline">Privasi</a>
-            <span className="px-1">·</span>
+            <span className="mx-1">·</span>
             <a href="#" className="hover:underline">Ketentuan</a>
-            <span className="px-1">·</span>
+            <span className="mx-1">·</span>
             <a href="#" className="hover:underline">Peta Situs</a>
           </div>
-          <div className="flex items-center gap-6 font-semibold">
+ 
+          {/* Kanan: bahasa, IDR, sosmed */}
+          <div className="flex items-center gap-4 font-semibold">
+            {/* Globe + Bahasa */}
             <button className="flex items-center gap-2 hover:underline">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4"><path d="M8 .25a7.77 7.77 0 0 1 7.75 7.78 7.75 7.75 0 0 1-7.52 7.72h-.25A7.75 7.75 0 0 1 .25 8.24v-.25A7.75 7.75 0 0 1 8 .25zm1.95 8.5h2.4c-.15 1.57-.71 3.06-1.5 4.31-.58-1.48-.96-3.05-1.12-4.67h.22zm-3.9 0h2.12c.15 1.62.53 3.19 1.11 4.66-.58-1.47-.96-3.04-1.11-4.66h-2.12zm-2.88 0H5.6c.16 1.62.54 3.19 1.12 4.67-.79-1.25-1.35-2.74-1.5-4.31h-2.05zm7.33-1.5h-2.4c.16-1.62.54-3.19 1.12-4.67.79 1.25 1.35 2.74 1.5 4.31h-2.05zm-3.9 0h2.12c-.15-1.62-.53-3.19-1.11-4.66.58 1.47.96 3.04 1.11 4.66h-2.12zm-2.88 0H5.6c-.16-1.62-.54-3.19-1.12-4.67.79 1.25 1.35 2.74 1.5 4.31h-2.05z" /></svg>
-              Bahasa Indonesia (ID)
-            </button>
+          {/* Globe SVG — sama persis dengan Airbnb */}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            aria-hidden="true"
+          >
+            {/* Lingkaran luar */}
+            <circle cx="12" cy="12" r="10" />
+            {/* Garis horizontal tengah */}
+            <path d="M2 12h20" />
+            {/* Elips vertikal kiri-kanan */}
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span>Bahasa Indonesia (ID)</span>
+        </button>
+ 
+            {/* IDR */}
             <button className="hover:underline">Rp IDR</button>
-            <div className="flex items-center gap-4">
-              <a href="#" className="hover:text-black">FB</a>
-              <a href="#" className="hover:text-black">TW</a>
-              <a href="#" className="hover:text-black">IG</a>
+ 
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-3">
+              {/* Facebook */}
+              <a href="#" aria-label="Facebook" className="hover:opacity-70 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor">
+                  <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987H7.9v-2.89h2.538V9.845c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+              </a>
+ 
+              {/* X (Twitter) */}
+              <a href="#" aria-label="X" className="hover:opacity-70 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+ 
+              {/* Instagram */}
+              <a href="#" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-[18px] h-[18px]" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -63,5 +108,5 @@ const FooterLinks = () => {
     </footer>
   );
 };
-
+ 
 export default FooterLinks;
